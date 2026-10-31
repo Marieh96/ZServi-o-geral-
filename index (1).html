@@ -1,0 +1,527 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja Comunicação - A oração que une com Deus todos os dias</title>
+    
+    <!-- PWA Primary Meta Tags -->
+    <meta name="theme-color" content="#0d47a1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IgrejaComunicação">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF6D6',
+                            200: '#FFE799',
+                            300: '#FCD15B',
+                            400: '#F7BC24',
+                            500: '#D4AF37',
+                            600: '#B28C1A',
+                            700: '#8A680C',
+                        },
+                        divine: {
+                            50: '#E8F1FD',
+                            100: '#C7DCFB',
+                            400: '#42A5F5',
+                            600: '#1976D2',
+                            700: '#1565C0',
+                            800: '#0D47A1',
+                            900: '#062860',
+                            950: '#031433'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        cursive: ['Great Vibes', 'cursive'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF6D6 0%, #FCD15B 40%, #D4AF37 70%, #997819 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .sky-glow {
+            box-shadow: 0 0 35px rgba(66, 165, 245, 0.25);
+        }
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+        }
+        /* Imagem de Fundo Representativa da Igreja */
+        .hero-banner {
+            background: linear-gradient(to bottom, rgba(3, 20, 51, 0.4) 0%, rgba(3, 20, 51, 0.95) 100%), 
+                        url('284005_2.jpg') center top/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-divine-950 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-divine-950 min-h-screen flex flex-col justify-between">
+
+    <!-- BANNER PWA DE INSTALAÇÃO -->
+
+    <!-- BANNER PWA DE INSTALAÇÃO (SURGE QUANDO DISPONÍVEL OU VIA INSTRUÇÕES) -->
+    <div id="pwaBanner" class="hidden bg-gradient-to-r from-divine-800 via-divine-700 to-divine-800 text-white border-b border-gold-500/40 p-3 shadow-xl sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex items-center justify-between gap-3 text-sm">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-mobile-screen-button text-gold-400 text-lg"></i>
+                <span>Instale o aplicativo da <strong>Igreja Comunicação</strong> na tela do seu celular!</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="installPWA()" class="bg-gold-500 hover:bg-gold-400 text-divine-950 font-bold px-3 py-1 rounded-lg text-xs transition shadow">
+                    Instalar App
+                </button>
+                <button onclick="dismissPWA()" class="text-slate-300 hover:text-white px-2 py-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5500000000000?text=A%20Paz%20do%20Senhor!%20Gostaria%20de%20receber%20as%20atualizações%20e%20palavras%20da%20Igreja%20Comunicação." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center gap-3 group border-2 border-emerald-300/40"
+       title="Acesse nosso WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-sm font-bold pr-1">
+            Entrar via WhatsApp
+        </span>
+    </a>
+
+    <!-- CABEÇALHO / HERO SECTION DA IGREJA -->
+    <header class="relative hero-bg border-b border-gold-500/40 overflow-hidden py-12 md:py-20">
+        <div class="absolute inset-0 heaven-light pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
+            
+            <!-- Cruz Gloriosa / Ícone Sacro -->
+            <div class="mb-3 text-gold-400 drop-shadow-[0_0_15px_rgba(212,175,55,0.8)] animate-pulse">
+                <i class="fa-solid fa-cross text-5xl"></i>
+            </div>
+
+            <!-- Frase de Destaque Inspiradora -->
+            <p class="font-cursive text-3xl md:text-5xl text-sky-200 mb-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
+                "A oração que une com Deus todos os dias"
+            </p>
+
+            <!-- Título da Igreja -->
+            <h1 class="font-cinzel text-4xl md:text-6xl font-black uppercase tracking-wider gold-gradient-text my-2 drop-shadow-2xl">
+                Igreja Comunicação
+            </h1>
+
+            <p class="text-slate-200 text-sm md:text-base max-w-xl mb-8 font-light leading-relaxed">
+                Um canal de fé diário para você e sua família. Acompanhe nossas palavras devocionais, horários dos cultos e participe da nossa comunidade no WhatsApp.
+            </p>
+
+            <!-- BOTÕES DE MÍDIA E REDES SOCIAIS DA IMAGEM -->
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                <!-- Botão YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold px-5 py-2.5 rounded-full shadow-lg transition transform hover:-translate-y-0.5 border border-red-400/40 text-sm">
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                    <span>Siga e se inscreva</span>
+                </a>
+
+                <!-- Botão Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center justify-center bg-divine-600 hover:bg-divine-500 text-white w-11 h-11 rounded-full shadow-lg transition transform hover:-translate-y-0.5 border border-divine-400/40" title="Facebook Oficial">
+                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                </a>
+
+                <!-- Botão WhatsApp Livre -->
+                <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-full shadow-lg transition transform hover:-translate-y-0.5 border border-emerald-400/40 text-sm">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Comunidade WhatsApp</span>
+                </a>
+
+                <!-- Botão Instalar App (PWA Manual) -->
+                <button onclick="showInstallInstructions()" 
+                        class="flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-divine-950 font-extrabold px-5 py-2.5 rounded-full shadow-lg transition transform hover:-translate-y-0.5 border border-gold-300/40 text-sm">
+                    <i class="fa-solid fa-download text-lg"></i>
+                    <span>Baixar App</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-5xl mx-auto px-4 py-10 space-y-12 flex-grow w-full">
+
+        <!-- PALAVRA DE FÉ DIÁRIA (AUTOMÁTICA) -->
+        <section class="relative bg-gradient-to-br from-divine-900 via-slate-900 to-divine-950 rounded-2xl p-6 md:p-8 border border-gold-500/40 shadow-2xl overflow-hidden gold-glow">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-gold-400 pointer-events-none">
+                <i class="fa-solid fa-bible text-9xl"></i>
+            </div>
+    <!-- CABEÇALHO / HERO SECTION DA IGREJA COM A IMAGEM DE FUNDO -->
+    <header class="relative hero-banner border-b border-gold-500/40 overflow-hidden py-16 md:py-28">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
+            
+            <!-- Badge de Boas-Vindas -->
+            <div class="inline-flex items-center gap-2 bg-divine-900/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-gold-400/40 text-gold-300 text-xs font-semibold mb-4 shadow-lg">
+                <i class="fa-solid fa-hands-praying"></i>
+                <span>Espaço de Fé & Comunhão Diária</span>
+            </div>
+
+            <!-- Frase de Destaque Inspiradora da Imagem -->
+            <h1 class="font-cursive text-4xl md:text-6xl text-amber-100 mb-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] tracking-wide">
+                A oração que une com Deus todos os dias
+            </h1>
+
+            <!-- Título Principal -->
+            <h2 class="font-cinzel text-3xl md:text-5xl font-black uppercase tracking-wider gold-gradient-text my-2 drop-shadow-2xl">
+                IGREJA COMUNICAÇÃO
+            </h2>
+
+            <p class="text-slate-200 text-sm md:text-base max-w-lg mb-8 font-light leading-relaxed bg-divine-950/40 p-3 rounded-xl backdrop-blur-xs border border-white/10">
+                Seja bem-vindo ao seu momento diário com Deus. Receba sua palavra de edificação, renovação espiritual e fortaleça a sua fé todos os dias.
+            </p>
+
+            <!-- BOTOES DE REDES SOCIAIS E ACESSO -->
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                <!-- Botão WhatsApp Principal -->
+                <a href="https://wa.me/5500000000000?text=A%20Paz%20do%20Senhor!%20Entrei%20pelo%20aplicativo%20e%20gostaria%20de%20receber%20a%20palavra%20di%C3%A1ria." target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold px-6 py-3 rounded-full shadow-xl transition transform hover:scale-105 border border-emerald-300/40 text-sm">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Entrar no WhatsApp</span>
+                </a>
+
+                <!-- Botão YouTube -->
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 bg-red-600/90 hover:bg-red-600 text-white font-semibold px-5 py-3 rounded-full shadow-lg transition border border-red-400/30 text-sm backdrop-blur-sm">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                    <span>YouTube</span>
+                </a>
+
+                <!-- Botão Facebook -->
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center justify-center bg-divine-700/80 hover:bg-divine-600 text-white w-12 h-12 rounded-full shadow-lg transition border border-divine-400/30 backdrop-blur-sm" title="Facebook">
+                    <i class="fa-brands fa-facebook-f text-lg"></i>
+                </a>
+
+                <!-- Botão Instalar App (PWA) -->
+                <button onclick="showInstallInstructions()" 
+                        class="flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-divine-950 font-extrabold px-5 py-3 rounded-full shadow-lg transition border border-gold-300/40 text-sm">
+                    <i class="fa-solid fa-mobile-screen text-base"></i>
+                    <span>Baixar App</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL: MOMENTO DE FÉ E ORAÇÃO -->
+    <main class="max-w-4xl mx-auto px-4 py-10 space-y-10 flex-grow w-full">
+
+        <!-- PALAVRA DE FÉ DIÁRIA (MOMENTO DE FÉ) -->
+        <section class="relative bg-gradient-to-br from-divine-900/90 via-slate-900/90 to-divine-950/90 rounded-3xl p-6 md:p-10 border border-gold-500/40 shadow-2xl backdrop-blur-md gold-glow">
+            <div class="absolute -right-8 -bottom-8 opacity-10 text-gold-400 pointer-events-none">
+                <i class="fa-solid fa-bible text-9xl"></i>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between border-b border-slate-800/80 pb-4 mb-6 gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="bg-gold-500/20 text-gold-400 p-3 rounded-2xl border border-gold-500/30">
+                        <i class="fa-solid fa-sparkles text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Momentos com Deus</span>
+                        <h2 class="text-2xl font-bold font-cinzel text-white">Palavra de Fé de Hoje</h2>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="loadNextDevotional()" class="text-xs bg-divine-800/80 hover:bg-divine-700 text-slate-300 px-3 py-1.5 rounded-xl border border-divine-600/40 transition flex items-center gap-1.5" title="Ver outra mensagem">
+                        <i class="fa-solid fa-rotate text-gold-400"></i>
+                        <span>Nova Palavra</span>
+                    </button>
+                    <span id="currentDateBadge" class="text-xs font-semibold text-divine-300 bg-divine-800/60 px-3 py-1.5 rounded-xl border border-divine-600/30">--</span>
+                </div>
+            </div>
+
+            <div class="space-y-5 relative z-10">
+                <h3 id="devotionalTitle" class="text-xl font-bold text-sky-200 font-cinzel">Carregando palavra...</h3>
+                
+                <blockquote class="text-lg md:text-xl italic text-slate-100 leading-relaxed font-serif pl-5 border-l-4 border-gold-400 bg-divine-950/50 py-4 px-3 rounded-r-xl" id="verseText">
+                    "Carregando a mensagem do dia..."
+                </blockquote>
+
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+                    <span class="font-bold text-gold-400 text-sm tracking-wide bg-gold-500/10 px-4 py-2 rounded-xl border border-gold-500/20 shadow-inner" id="verseRef">
+                        --
+                    </span>
+                    <button onclick="shareVerse()" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl text-xs font-bold transition shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> Compartilhar no WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PEDIDO DE ORAÇÃO E PEDIDO DE CONTATO -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- FORMULÁRIO DE PEDIDOS DE ORAÇÃO -->
+            <div class="bg-gradient-to-b from-divine-900/80 to-slate-900/80 rounded-2xl p-6 border border-divine-700/40 shadow-xl backdrop-blur-md">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="bg-gold-500/10 text-gold-400 p-2.5 rounded-xl border border-gold-500/30">
+                        <i class="fa-solid fa-hands-holding-child text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold font-cinzel text-white">Pedido de Oração</h3>
+                        <p class="text-xs text-slate-400">Escreva o seu nome e seu motivo de oração</p>
+                    </div>
+                </div>
+                
+                <form id="prayerForm" class="space-y-4" onsubmit="sendPrayerRequest(event)">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Seu Nome</label>
+                        <input type="text" id="prayerName" required placeholder="Digite seu nome..." 
+                               class="w-full bg-divine-950/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-gold-400 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Seu Pedido de Oração</label>
+                        <textarea id="prayerRequest" rows="3" required placeholder="Coloque aqui sua intenção ou causa..." 
+                                  class="w-full bg-divine-950/80 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none focus:border-gold-400 transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Enviar Pedido de Oração
+                    </button>
+                </form>
+            </div>
+
+            <!-- CARD DE BEM-VINDO / CANAL DIRECTO -->
+            <div class="bg-gradient-to-b from-divine-900/80 to-slate-900/80 rounded-2xl p-6 border border-divine-700/40 shadow-xl backdrop-blur-md flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-gold-500/10 text-gold-400 p-2.5 rounded-xl border border-gold-500/30">
+                            <i class="fa-solid fa-heart text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold font-cinzel text-white">Canal Aberto de Fé</h3>
+                            <p class="text-xs text-slate-400">Acesse quando quiser durante o seu dia</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        Este aplicativo foi preparado carinhosamente para ser a sua companhia diária com a Palavra de Deus. Salve este app no seu celular para ler uma mensagem de esperança todas as manhãs e noites.
+                    </p>
+                    <div class="bg-divine-950/70 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <div class="flex items-center gap-2 text-xs text-gold-400 font-bold">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Acesso livre sem necessidade de cadastro</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gold-400 font-bold">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Mensagens de fé renovadas diariamente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" 
+                   class="mt-6 w-full bg-divine-800 hover:bg-divine-700 text-slate-100 font-bold py-3 rounded-xl transition text-center text-xs border border-divine-600/40 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-comments text-gold-400"></i>
+                    Falar Conosco no WhatsApp
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE INSTRUÇÕES DE INSTALAÇÃO PWA -->
+    <div id="installModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-divine-900 border border-gold-500/50 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 class="font-cinzel text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-circle-down text-gold-400"></i> Instalar Aplicativo
+                </h3>
+                <button onclick="closeInstallModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+                Você pode instalar este aplicativo diretamente na tela inicial do seu celular para acessar todos os dias rapidinho:
+            </p>
+            <div class="space-y-3 text-xs text-slate-200">
+                <div class="flex items-center gap-3 bg-divine-950 p-3 rounded-xl border border-slate-800">
+                    <i class="fa-brands fa-android text-emerald-400 text-xl"></i>
+                    <div>
+                        <strong>No Android (Chrome):</strong><br>
+                        Clique nos 3 pontinhos <i class="fa-solid fa-ellipsis-vertical"></i> e selecione <strong>"Adicionar à Tela inicial"</strong> ou <strong>"Instalar aplicativo"</strong>.
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-divine-950 p-3 rounded-xl border border-slate-800">
+                    <i class="fa-brands fa-apple text-slate-200 text-xl"></i>
+                    <div>
+                        <strong>No iPhone (Safari):</strong><br>
+                        Clique no botão de Compartilhar <i class="fa-solid fa-share-nodes"></i> e selecione <strong>"Adicionar à Tela de Início"</strong>.
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeInstallModal()" class="w-full bg-gold-500 hover:bg-gold-400 text-divine-950 font-bold py-2.5 rounded-xl text-xs transition">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="border-t border-divine-800/60 bg-divine-950 py-8 text-center text-xs text-slate-400">
+        <div class="max-w-5xl mx-auto px-4 space-y-3">
+            <div class="flex items-center justify-center gap-2 text-gold-400">
+                <i class="fa-solid fa-cross"></i>
+                <span class="font-cinzel font-bold tracking-widest">IGREJA COMUNICAÇÃO</span>
+            </div>
+            <p class="italic font-serif text-slate-300">"Guardemos firme a confissão da nossa esperança, porque fiel é aquele que prometeu." — Hebreus 10:23</p>
+            <p>&copy; <span id="year"></span> Igreja Comunicação. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- LÓGICA JAVASCRIPT INTEGRADA -->
+    <script>
+        // DEVOCIONAIS E PALAVRAS DE FÉ (EXPANDIDO PARA ROTAÇÃO)
+        const dailyDevotionals = [
+            {
+                title: "A Oração que Abre Portas",
+                text: "A oração de um justo é poderosa e eficaz. Nunca duvide do poder da sua conversa diária com Deus.",
+                ref: "Tiago 5:16"
+            },
+            {
+                title: "Deus Guiará os Seus Passos",
+                text: "O Senhor é o meu pastor; nada me faltará. Confie os caminhos da sua vida nas mãos do Pai.",
+                ref: "Salmos 23:1"
+            },
+            {
+                title: "Força nas Dificuldades",
+                text: "Tudo posso naquele que me fortalece. Quando faltarem as forças, lembre-se que a graça de Deus te sustenta.",
+                ref: "Filipenses 4:13"
+            },
+            {
+                title: "Promessa de Paz para o Lar",
+                text: "Tu conservarás em paz aquele cujo pensamento está firme em ti; porque ele confia em ti.",
+                ref: "Isaías 26:3"
+            },
+            {
+                title: "Amor e União da Família",
+                text: "Eu e a minha casa serviremos ao Senhor. Que a paz de Cristo abençoe toda a sua família hoje.",
+                ref: "Josué 24:15"
+            },
+            {
+                title: "A Graça que Renovará Tudo",
+                text: "As misericórdias do Senhor são a causa de não sermos consumidos; renovam-se cada manhã; grande é a sua fidelidade.",
+                ref: "Lamentações 3:22-23"
+            },
+            {
+                title: "Descanso Sob as Asas de Deus",
+                text: "Aquele que habita no esconderijo do Altíssimo, à sombra do Onipotente descansará.",
+                ref: "Salmos 91:1"
+            }
+        ];
+
+        let currentIndex = 0;
+        let deferredPrompt;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const now = new Date();
+            document.getElementById('year').textContent = now.getFullYear();
+            
+            const options = { weekday: 'long', day: 'numeric', month: 'long' };
+            document.getElementById('currentDateBadge').textContent = now.toLocaleDateString('pt-BR', options);
+
+            // Carrega a palavra do dia com base no dia do ano
+            const startOfYear = new Date(now.getFullYear(), 0, 0);
+            const diff = now - startOfYear;
+            const oneDay = 1000 * 60 * 60 * 24;
+            const dayOfYear = Math.floor(diff / oneDay);
+            
+            currentIndex = dayOfYear % dailyDevotionals.length;
+            displayDevotional(currentIndex);
+        });
+
+        function displayDevotional(index) {
+            const devotional = dailyDevotionals[index];
+            document.getElementById('devotionalTitle').textContent = devotional.title;
+            document.getElementById('verseText').textContent = `"${devotional.text}"`;
+            document.getElementById('verseRef').textContent = devotional.ref;
+        }
+
+        function loadNextDevotional() {
+            currentIndex = (currentIndex + 1) % dailyDevotionals.length;
+            displayDevotional(currentIndex);
+        }
+
+        // Compartilhar versículo no WhatsApp
+        function shareVerse() {
+            const title = document.getElementById('devotionalTitle').textContent;
+            const verseText = document.getElementById('verseText').textContent;
+            const verseRef = document.getElementById('verseRef').textContent;
+
+            const message = `*Igreja Comunicação - Palavra de Fé Diária*\n\n*${title}*\n${verseText}\n— ${verseRef}\n\n_Acesse o aplicativo da igreja todos os dias para ter o seu momento com Deus!_`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Enviar pedido de oração via WhatsApp
+        function sendPrayerRequest(event) {
+            event.preventDefault();
+            const name = document.getElementById('prayerName').value;
+            const request = document.getElementById('prayerRequest').value;
+
+            const message = `*Pedido de Oração - Igreja Comunicação*\n\n*Nome:* ${name}\n*Pedido:* ${request}`;
+            window.open(`https://wa.me/5500000000000?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // PWA - Instalação na Tela Inicial
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('pwaBanner').classList.remove('hidden');
+        });
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Aplicativo instalado');
+                    }
+                    deferredPrompt = null;
+                    dismissPWA();
+                });
+            } else {
+                showInstallInstructions();
+            }
+        }
+
+        function dismissPWA() {
+            document.getElementById('pwaBanner').classList.add('hidden');
+        }
+
+        function showInstallInstructions() {
+            document.getElementById('installModal').classList.remove('hidden');
+        }
+
+        function closeInstallModal() {
+            document.getElementById('installModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+```
